@@ -11,7 +11,7 @@ Cuando finalice la ejecucion podrá ver la IP publica del nodo ngix.
 ```
 ./deploy.sh
 ```
-### Para eliminar los modulos:
+### Para eliminar los modulos
 ```
 ./delete.sh
 ```
