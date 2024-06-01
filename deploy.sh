@@ -1,22 +1,23 @@
 #!/bin/bash
 
-echo " [step 1] creando namespace..."
+echo " [1/5] creando namespace..."
 echo ""
 kubectl create -f namespace.yaml
-
-echo " [step 2] creando deploy..."
+sleep 4
+echo " [2/5] creando deploy..."
 echo ""
 kubectl create -f nginx-deployment.yaml
-
-echo " [step 3] estado del deploy..."
+#kubectl get deploy -n nginx-test
+sleep 10
+echo " [3/5] estado del deploy..."
 echo ""
-kubectl get pod -n nginx-test
+kubectl get pods -n asd | awk '{print $2}'
 
-echo " [step 4] exponer a internet..."
+echo " [4/5] exponer a internet..."
 echo ""
-kubectl expose deploy nginx-test -n nginx-test --type=LoadBalancer --port=80
+kubectl expose deploy nginx -n asd --type=LoadBalancer --port=80
 
-echo " [step 5] ok..."
+echo " [5/5] comprobando ip publica..."
 echo ""
-PUBLIC_IP=$(kubectl get svc -n nginx-test | awk '{print $4}')
+PUBLIC_IP=$(kubectl get svc -n asd | awk '{print $4}')
 echo " IP publica del servidor nginx : $PUBLIC_IP"
