@@ -1,8 +1,13 @@
-# gt_test
-Para ejecutar este deploy, ejecute el script deploy.sh 
-Ejemplo de uso:
-./deploy.sh
+## Prueba tecnica GlobalTuning
 
-Para eliminar el deploy ejecute el script delete.sh
-Ejemplo de uso:
+Ejecute los script de la siguiente manera :
+
+### Para levantar los modulos en AWS EKS
+Cuando finalice la ejecucion podrá ver la IP publica del nodo ngix.
+```
+./deploy.sh
+```
+### Para eliminar los modulos:
+```
 ./delete.sh
+```
