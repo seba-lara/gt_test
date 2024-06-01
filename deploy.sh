@@ -15,7 +15,7 @@ kubectl get pods -n asd | awk '{print $2}'
 
 echo " [4/5] exponer a internet..."
 echo ""
-kubectl expose deploy nginx -n asd --type=LoadBalancer --port=80
+kubectl expose deploy nginx-test -n nginx --type=LoadBalancer --port=80
 
 echo " [5/5] comprobando ip publica..."
 echo ""
