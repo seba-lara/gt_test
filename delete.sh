@@ -1,7 +1,13 @@
-# 1 crear namespace
-#kubectl delete namespace nginx-test
+#!/bin/bash
+echo "Eliminando deployment..."
+echo ""
 kubectl delete -f nginx-deployment.yaml
+echo ""
+echo "Eliminando namespace..."
+echo ""
 kubectl delete -f namespace.yaml
-sleep 20
+echo ""
+echo "Espere..."
+sleep 10
 echo "OK!"
 sleep 1
